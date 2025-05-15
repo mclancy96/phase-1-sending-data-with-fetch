@@ -18,7 +18,13 @@ const submitData = (userName, userEmail) => {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      console.log('data:', data);
+      const userId = data.id;
+      console.log('userId', userId)
+      const userInfo = document.createElement("h2")
+      userInfo.textContent = userId
+      console.log('userInfo', userInfo)
+      document.body.appendChild(userInfo)
     })
     .catch(function (error) {
       console.log(error.message);

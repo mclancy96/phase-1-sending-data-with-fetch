@@ -31,3 +31,8 @@ const addToDOM = (stringToAdd) => {
   newEl.textContent = stringToAdd
   document.body.appendChild(newEl)
 }
+
+document.addEventListener('submit', (event) => {
+  event.preventDefault();
+  submitData(document.getElementById('userName').value, document.getElementById('userEmail').value)
+})

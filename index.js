@@ -18,15 +18,16 @@ const submitData = (userName, userEmail) => {
       return response.json();
     })
     .then(function (data) {
-      console.log('data:', data);
       const userId = data.id;
-      console.log('userId', userId)
-      const userInfo = document.createElement("h2")
-      userInfo.textContent = userId
-      console.log('userInfo', userInfo)
-      document.body.appendChild(userInfo)
+      addToDOM(userId)
     })
     .catch(function (error) {
-      console.log(error.message);
+      addToDOM(error.message);
     });
+}
+
+const addToDOM = (stringToAdd) => {
+  const newEl = document.createElement("h2")
+  newEl.textContent = stringToAdd
+  document.body.appendChild(newEl)
 }
